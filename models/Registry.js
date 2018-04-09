@@ -2,11 +2,13 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var registrySchema = new Schema({
-  description: String,
-  amount: Number,
-  month: String,
-  year: Number
+  firstName: String,
+  lastName: String,
+  email: String,
+  date: Date
 });
+
+//regexp schemas
 
 module.exports = mongoose.model('Registry', registrySchema);
 

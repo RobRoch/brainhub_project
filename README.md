@@ -3,6 +3,9 @@
 - npm install
 - npm start
 
+- validation on frontend js. Didn't use moongose schema validation.
+
+
 ## Brainhub Task
 
 Please create a small application form for an event. The form should contain fields listed below:
