@@ -33150,8 +33150,7 @@ var App = function (_React$Component) {
       lastName: '',
       email: '',
       date: '',
-      msg: '',
-      isValid: false
+      msg: ''
     };
     _this.onClick = _this.onClick.bind(_this);
     _this.handleTextChange = _this.handleTextChange.bind(_this);
@@ -33171,15 +33170,14 @@ var App = function (_React$Component) {
       var emailReg = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
       var dateReg = /^(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))$/;
       var msg = '';
-      !nameReg.test(f) ? msg += "First name not valid. <br>" : '';
-      !nameReg.test(l) ? msg += "Last name not valid. <br>" : '';
-      !emailReg.test(e) ? msg += "Email address not valid. <br>" : '';
+      !nameReg.test(f) ? msg += "First name not valid. " : '';
+      !nameReg.test(l) ? msg += "Last name not valid. " : '';
+      !emailReg.test(e) ? msg += "Email address not valid. " : '';
       !dateReg.test(d) ? msg += "Date not valid. " : '';
       if (msg) {
         this.state.msg = msg;
         return false;
       } else {
-        this.state.isValid = true;
         return true;
       }
     }
@@ -33190,6 +33188,7 @@ var App = function (_React$Component) {
         console.log("Failed to validate fields. " + e.state.msg);
         _reactDom2.default.render(e.state.msg, document.getElementById('validation'));
       } else {
+        _reactDom2.default.render('', document.getElementById('validation'));
         _axios2.default.post('/insert', querystring.stringify({
           fName: e.state.firstName,
           lName: e.state.lastName,
@@ -33226,13 +33225,13 @@ var App = function (_React$Component) {
           _react2.default.createElement(
             'h1',
             null,
-            'Sign up'
+            'Sign up Brainhub'
           ),
           _react2.default.createElement('input', { type: 'text', id: 'firstName', name: 'firstName', value: this.state.firstName, onChange: this.handleTextChange, placeholder: 'First Name' }),
           _react2.default.createElement('input', { type: 'text', id: 'lastName', name: 'lastName', value: this.state.lastName, onChange: this.handleTextChange, placeholder: 'Last Name' }),
           _react2.default.createElement('input', { type: 'text', id: 'email', name: 'email', value: this.state.email, onChange: this.handleTextChange, placeholder: 'E-mail' }),
           _react2.default.createElement('input', { type: 'date', id: 'date', name: 'date', value: this.state.date, onChange: this.handleTextChange }),
-          _react2.default.createElement('input', { type: 'submit', name: 'signup_submit', value: 'Sign me up', onClick: this.onClick }),
+          _react2.default.createElement('input', { type: 'submit', name: 'signup_submit', value: 'Register', onClick: this.onClick }),
           _react2.default.createElement('h2', { id: 'validation' })
         )
       );

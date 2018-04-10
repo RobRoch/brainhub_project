@@ -14,8 +14,7 @@ export default class App extends React.Component {
       lastName: '',
       email: '',
       date: '',
-      msg: '',
-      isValid: false
+      msg: ''
     }
     this.onClick = this.onClick.bind(this);
     this.handleTextChange = this.handleTextChange.bind(this);
@@ -39,7 +38,6 @@ export default class App extends React.Component {
       this.state.msg = msg;
       return false;
     } else {
-      this.state.isValid = true;
       return true;
     }
   }
@@ -50,6 +48,7 @@ export default class App extends React.Component {
       console.log("Failed to validate fields. " + e.state.msg);
       ReactDOM.render(e.state.msg, document.getElementById('validation'));
     } else {
+      ReactDOM.render('', document.getElementById('validation'));
       axios.post('/insert',
         querystring.stringify({
           fName: e.state.firstName,

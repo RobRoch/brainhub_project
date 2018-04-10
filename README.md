@@ -2,8 +2,12 @@
 
 - npm install
 - npm start
+- npm test
 
-- validation on frontend js. Didn't use moongose schema validation.
+- validation on frontend js. Didn't use validation in mongoose schema.
+- testing only mongoose schema data with mocha. 
+
+- PS. first time react + mocha.
 
 
 ## Brainhub Task

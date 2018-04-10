@@ -8,7 +8,5 @@ var registrySchema = new Schema({
   date: Date
 });
 
-//regexp schemas
-
 module.exports = mongoose.model('Registry', registrySchema);
 
